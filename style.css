@@ -1,0 +1,1838 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Raleway:wght@300;400;700&display=swap');
+
+/* Root Variables */
+:root {
+    --primary: #4CAF50; /* Main green */
+    --primary-dark: #388E3C; /* Darker green */
+    --primary-light: #C8E6C9; /* Light green */
+    --accent: #8BC34A; /* Lime green accent */
+    --dark: #212121;
+    --light: #f5f5f5;
+    --card-bg: #ffffff;
+    --text-color: #333;
+    --progress-bg: #e0e0e0;
+    --progress-fill: #4CAF50;
+    --social-hover: #4CAF50;
+}
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-color);
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    background-color: #ffffff;
+}
+
+/* Company Name in Top Left */
+.company-name {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 2rem;
+    color: var(--primary);
+    z-index: 10;
+    letter-spacing: 1px;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Card Styles */
+.card {
+    background: var(--card-bg);
+    max-width: 800px;
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(76, 175, 80, 0.15);
+    position: relative;
+    padding: 40px;
+    border: 1px solid rgba(76, 175, 80, 0.1);
+}
+
+/* Logo Styles */
+.logo-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo {
+    max-width: 180px;
+    height: auto;
+}
+
+/* Content Styles */
+.content {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.headline {
+    font-family: 'Raleway', sans-serif;
+    font-size: 3rem;
+    color: var(--primary);
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.animated-text {
+    position: relative;
+    display: inline-block;
+}
+
+.animated-text::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 3px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: line-anim 2s ease-out forwards;
+}
+
+@keyframes line-anim {
+    0% { transform: scaleX(0); }
+    100% { transform: scaleX(1); }
+}
+
+.tagline {
+    font-size: 1.2rem;
+    color: var(--dark);
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+/* Progress Bar */
+.progress-container {
+    margin: 30px 0;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: var(--progress-bg);
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.progress {
+    height: 100%;
+    background-color: var(--progress-fill);
+    width: 0;
+    transition: width 1.5s ease-in-out;
+}
+
+.progress-text {
+    text-align: right;
+    font-size: 0.9rem;
+    color: var(--primary-dark);
+    font-weight: 600;
+}
+
+/* Form Styles */
+.subscribe-form {
+    margin: 30px 0;
+}
+
+.input-group {
+    display: flex;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.input-group input {
+    flex: 1;
+    padding: 14px 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 30px 0 0 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+    border-color: var(--primary);
+}
+
+.input-group button {
+    padding: 0 25px;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 0 30px 30px 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.input-group button:hover {
+    background-color: var(--primary-dark);
+}
+
+/* Contact Info */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.contact-item i {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary);
+    color: white;
+    border-radius: 50%;
+    font-size: 0.9rem;
+}
+
+.contact-item a, 
+.contact-item span {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+.contact-item a:hover {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--dark);
+    color: white;
+    border-radius: 50%;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    background-color: var(--social-hover);
+    transform: translateY(-3px);
+}
+
+/* Solar Animation */
+.solar-animation {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 200px;
+    pointer-events: none;
+    opacity: 0.7;
+    z-index: 1;
+}
+
+.sun {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle, #FFEB3B 30%, #FFC107 100%);
+    border-radius: 50%;
+    box-shadow: 0 0 30px rgba(255, 235, 59, 0.5);
+    animation: pulse 3s infinite alternate;
+}
+
+@keyframes pulse {
+    from { transform: scale(1); box-shadow: 0 0 20px rgba(255, 235, 59, 0.5); }
+    to { transform: scale(1.1); box-shadow: 0 0 40px rgba(255, 235, 59, 0.7); }
+}
+
+.panel {
+    position: absolute;
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.6), rgba(56, 142, 60, 0.6));
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+}
+
+.panel-1 {
+    top: 100px;
+    right: 40px;
+    width: 80px;
+    height: 40px;
+    transform: rotate(15deg);
+}
+
+.panel-2 {
+    top: 120px;
+    right: 80px;
+    width: 60px;
+    height: 30px;
+    transform: rotate(-10deg);
+}
+
+.panel-3 {
+    top: 140px;
+    right: 30px;
+    width: 70px;
+    height: 35px;
+    transform: rotate(5deg);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .company-name {
+        font-size: 1rem;
+        top: 10px;
+        left: 10px;
+    }
+    
+    .card {
+        padding: 30px 20px;
+    }
+    
+    .headline {
+        font-size: 2.2rem;
+    }
+    
+    .tagline {
+        font-size: 1rem;
+    }
+    
+    .input-group {
+        flex-direction: column;
+    }
+    
+    .input-group input {
+        border-radius: 30px;
+        margin-bottom: 10px;
+    }
+    
+    .input-group button {
+        border-radius: 30px;
+        padding: 12px;
+    }
+    
+    .solar-animation {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .sun {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .panel-1, .panel-2, .panel-3 {
+        transform: scale(0.8);
+    }
+}
+
+@media (max-width: 480px) {
+    .headline {
+        font-size: 1.8rem;
+    }
+    
+    .contact-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .social-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+    
+    .solar-animation {
+        opacity: 0.4;
+    }
+}/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Raleway:wght@300;400;700&display=swap');
+
+/* Root Variables */
+:root {
+    --primary: #4CAF50; /* Main green */
+    --primary-dark: #388E3C; /* Darker green */
+    --primary-light: #C8E6C9; /* Light green */
+    --accent: #8BC34A; /* Lime green accent */
+    --dark: #212121;
+    --light: #f5f5f5;
+    --card-bg: #ffffff;
+    --text-color: #333;
+    --progress-bg: #e0e0e0;
+    --progress-fill: #4CAF50;
+    --social-hover: #4CAF50;
+}
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-color);
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    background-color: #ffffff;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Card Styles */
+.card {
+    background: var(--card-bg);
+    max-width: 800px;
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(76, 175, 80, 0.15);
+    position: relative;
+    padding: 40px;
+    border: 1px solid rgba(76, 175, 80, 0.1);
+}
+
+/* Logo Styles */
+.logo-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo {
+    max-width: 180px;
+    height: auto;
+}
+
+/* Content Styles */
+.content {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.headline {
+    font-family: 'Raleway', sans-serif;
+    font-size: 3rem;
+    color: var(--primary);
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.animated-text {
+    position: relative;
+    display: inline-block;
+}
+
+.animated-text::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 3px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: line-anim 2s ease-out forwards;
+}
+
+@keyframes line-anim {
+    0% { transform: scaleX(0); }
+    100% { transform: scaleX(1); }
+}
+
+.tagline {
+    font-size: 1.2rem;
+    color: var(--dark);
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+/* Progress Bar */
+.progress-container {
+    margin: 30px 0;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: var(--progress-bg);
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.progress {
+    height: 100%;
+    background-color: var(--progress-fill);
+    width: 0;
+    transition: width 1.5s ease-in-out;
+}
+
+.progress-text {
+    text-align: right;
+    font-size: 0.9rem;
+    color: var(--primary-dark);
+    font-weight: 600;
+}
+
+/* Form Styles */
+.subscribe-form {
+    margin: 30px 0;
+}
+
+.input-group {
+    display: flex;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.input-group input {
+    flex: 1;
+    padding: 14px 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 30px 0 0 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+    border-color: var(--primary);
+}
+
+.input-group button {
+    padding: 0 25px;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 0 30px 30px 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.input-group button:hover {
+    background-color: var(--primary-dark);
+}
+
+/* Contact Info */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.contact-item i {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary);
+    color: white;
+    border-radius: 50%;
+    font-size: 0.9rem;
+}
+
+.contact-item a, 
+.contact-item span {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+.contact-item a:hover {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--dark);
+    color: white;
+    border-radius: 50%;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    background-color: var(--social-hover);
+    transform: translateY(-3px);
+}
+
+/* Solar Animation */
+.solar-animation {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 200px;
+    pointer-events: none;
+    opacity: 0.7;
+    z-index: 1;
+}
+
+.sun {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle, #FFEB3B 30%, #FFC107 100%);
+    border-radius: 50%;
+    box-shadow: 0 0 30px rgba(255, 235, 59, 0.5);
+    animation: pulse 3s infinite alternate;
+}
+
+@keyframes pulse {
+    from { transform: scale(1); box-shadow: 0 0 20px rgba(255, 235, 59, 0.5); }
+    to { transform: scale(1.1); box-shadow: 0 0 40px rgba(255, 235, 59, 0.7); }
+}
+
+.panel {
+    position: absolute;
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.6), rgba(56, 142, 60, 0.6));
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+}
+
+.panel-1 {
+    top: 100px;
+    right: 40px;
+    width: 80px;
+    height: 40px;
+    transform: rotate(15deg);
+}
+
+.panel-2 {
+    top: 120px;
+    right: 80px;
+    width: 60px;
+    height: 30px;
+    transform: rotate(-10deg);
+}
+
+.panel-3 {
+    top: 140px;
+    right: 30px;
+    width: 70px;
+    height: 35px;
+    transform: rotate(5deg);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .card {
+        padding: 30px 20px;
+    }
+    
+    .headline {
+        font-size: 2.2rem;
+    }
+    
+    .tagline {
+        font-size: 1rem;
+    }
+    
+    .input-group {
+        flex-direction: column;
+    }
+    
+    .input-group input {
+        border-radius: 30px;
+        margin-bottom: 10px;
+    }
+    
+    .input-group button {
+        border-radius: 30px;
+        padding: 12px;
+    }
+    
+    .solar-animation {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .sun {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .panel-1, .panel-2, .panel-3 {
+        transform: scale(0.8);
+    }
+}
+
+@media (max-width: 480px) {
+    .headline {
+        font-size: 1.8rem;
+    }
+    
+    .contact-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .social-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+    
+    .solar-animation {
+        opacity: 0.4;
+    }
+}
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.contact-item i {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary);
+    color: white;
+    border-radius: 50%;
+    font-size: 0.9rem;
+}
+
+.contact-item a, 
+.contact-item span {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+.contact-item a:hover {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--dark);
+    color: white;
+    border-radius: 50%;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: var(--social-hover);
+    transform: translateY(-3px);
+}
+
+/* Solar Animation */
+.solar-animation {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 200px;
+    pointer-events: none;
+    opacity: 0.7;
+    z-index: 1;
+}
+
+.sun {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle, #ffeb3b 30%, #ff9800 100%);
+    border-radius: 50%;
+    box-shadow: 0 0 40px rgba(255, 152, 0, 0.5);
+    animation: pulse 3s infinite alternate;
+}
+
+@keyframes pulse {
+    from { transform: scale(1); box-shadow: 0 0 20px rgba(255, 152, 0, 0.5); }
+    to { transform: scale(1.1); box-shadow: 0 0 40px rgba(255, 152, 0, 0.8); }
+}
+
+.panel {
+    position: absolute;
+    background: linear-gradient(135deg, rgba(30, 136, 229, 0.6), rgba(13, 71, 161, 0.6));
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+}
+
+.panel-1 {
+    top: 100px;
+    right: 40px;
+    width: 80px;
+    height: 40px;
+    transform: rotate(15deg);
+}
+
+.panel-2 {
+    top: 120px;
+    right: 80px;
+    width: 60px;
+    height: 30px;
+    transform: rotate(-10deg);
+}
+
+.panel-3 {
+    top: 140px;
+    right: 30px;
+    width: 70px;
+    height: 35px;
+    transform: rotate(5deg);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .card {
+        padding: 30px 20px;
+    }
+    
+    .headline {
+        font-size: 2.2rem;
+    }
+    
+    .tagline {
+        font-size: 1rem;
+    }
+    
+    .input-group {
+        flex-direction: column;
+    }
+    
+    .input-group input {
+        border-radius: 30px;
+        margin-bottom: 10px;
+    }
+    
+    .input-group button {
+        border-radius: 30px;
+        padding: 12px;
+    }
+    
+    .solar-animation {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .sun {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .panel-1, .panel-2, .panel-3 {
+        transform: scale(0.8);
+    }
+}
+
+@media (max-width: 480px) {
+    .headline {
+        font-size: 1.8rem;
+    }
+    
+    .contact-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .social-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+    
+    .solar-animation {
+        opacity: 0.4;
+    }
+}
+}
+
+.subscribe-form input {
+    flex: 1;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 30px;
+    background-color: var(--input-bg);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+.subscribe-form button {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 30px;
+    margin-left: -40px;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.subscribe-form button:hover {
+    background-color: #e8b665;
+}
+
+/* Contact Info */
+.contact-info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 10px 15px;
+    border-radius: 20px;
+}
+
+.contact-item i {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+.contact-item a, .contact-item span {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.contact-item a:hover {
+    text-decoration: underline;
+}
+
+/* Decorative Elements */
+.decoration {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.sun-graphic {
+    position: absolute;
+    top: 10px;
+    left: 30px;
+    width: 180px;
+    height: 180px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' style='enable-background:new 0 0 512 512' xml:space='preserve'%3E%3Ccircle style='fill:%23fff5b1' cx='256' cy='256' r='153.921'/%3E%3Ccircle style='fill:%23ffeb64' cx='256' cy='256' r='102.614'/%3E%3Cpath d='M256 145.37c-61.002 0-110.63 49.629-110.63 110.63S194.998 366.63 256 366.63 366.63 317.002 366.63 256 317.002 145.37 256 145.37zm0 205.227c-52.161 0-94.597-42.436-94.597-94.597s42.436-94.597 94.597-94.597 94.597 42.436 94.597 94.597-42.436 94.597-94.597 94.597zM67.34 256a8.017 8.017 0 0 0-8.017-8.017H8.017a8.017 8.017 0 0 0 0 16.034h51.307A8.017 8.017 0 0 0 67.34 256zM147.539 353.123l-60.465 60.465a8.016 8.016 0 0 0 0 11.337 7.988 7.988 0 0 0 5.668 2.348 7.988 7.988 0 0 0 5.668-2.348l60.465-60.465a8.016 8.016 0 0 0 0-11.337 8.015 8.015 0 0 0-11.336 0zM413.589 87.074l-60.465 60.465a8.016 8.016 0 0 0 0 11.337 7.988 7.988 0 0 0 5.668 2.348 7.988 7.988 0 0 0 5.668-2.348l60.465-60.465a8.016 8.016 0 0 0 0-11.337 8.013 8.013 0 0 0-11.336 0zM393.353 256a8.017 8.017 0 0 0 8.017 8.017h17.102a8.017 8.017 0 0 0 0-16.034H401.37a8.017 8.017 0 0 0-8.017 8.017zM118.647 256a8.017 8.017 0 0 0-8.017-8.017H93.528a8.017 8.017 0 0 0 0 16.034h17.102a8.017 8.017 0 0 0 8.017-8.017zM503.983 247.983h-51.307a8.017 8.017 0 0 0 0 16.034h51.307a8.017 8.017 0 0 0 0-16.034zM256 118.647a8.017 8.017 0 0 0 8.017-8.017V93.528a8.017 8.017 0 0 0-16.034 0v17.102a8.017 8.017 0 0 0 8.017 8.017zM256 67.34a8.017 8.017 0 0 0 8.017-8.017V8.017a8.017 8.017 0 0 0-16.034 0v51.307A8.017 8.017 0 0 0 256 67.34zM256 393.353a8.017 8.017 0 0 0-8.017 8.017v17.102a8.017 8.017 0 0 0 16.034 0V401.37a8.017 8.017 0 0 0-8.017-8.017zM256 444.66a8.017 8.017 0 0 0-8.017 8.017v51.307a8.017 8.017 0 0 0 16.034 0v-51.307A8.017 8.017 0 0 0 256 444.66zM147.539 158.877a7.988 7.988 0 0 0 5.668 2.348 7.988 7.988 0 0 0 5.668-2.348 8.016 8.016 0 0 0 0-11.337L98.411 87.074a8.014 8.014 0 0 0-11.337 0 8.016 8.016 0 0 0 0 11.337l60.465 60.466zM364.461 353.123a8.016 8.016 0 0 0-11.337 0 8.016 8.016 0 0 0 0 11.337l60.465 60.465c1.565 1.566 3.617 2.348 5.668 2.348s4.103-.782 5.668-2.348a8.016 8.016 0 0 0 0-11.337l-60.464-60.465zM105.898 326.194a8 8 0 0 0 3.065-.612l15.8-6.545a8.016 8.016 0 1 0-6.135-14.813l-15.8 6.545a8.016 8.016 0 0 0-4.339 10.474 8.017 8.017 0 0 0 7.409 4.951zM71.227 323.858l-15.8 6.545a8.016 8.016 0 1 0 6.136 14.813l15.8-6.545a8.016 8.016 0 1 0-6.136-14.813zM437.709 188.754a8.018 8.018 0 0 0 3.065-.611l15.8-6.545a8.017 8.017 0 0 0-6.135-14.813l-15.8 6.545a8.016 8.016 0 0 0-4.339 10.474 8.016 8.016 0 0 0 7.409 4.95zM403.037 186.418l-15.8 6.545a8.016 8.016 0 0 0-4.339 10.474 8.018 8.018 0 0 0 10.475 4.339l15.8-6.545a8.018 8.018 0 0 0-6.136-14.813zM186.418 108.963l6.545 15.8a8.02 8.02 0 0 0 7.41 4.951 8.016 8.016 0 0 0 7.404-11.086l-6.545-15.8a8.015 8.015 0 0 0-10.474-4.339 8.016 8.016 0 0 0-4.34 10.474zM173.329 77.362a8.019 8.019 0 0 0 10.475 4.339 8.016 8.016 0 0 0 4.339-10.474l-6.545-15.8a8.017 8.017 0 0 0-14.813 6.135l6.544 15.8zM338.671 434.638a8.016 8.016 0 0 0-10.474-4.339 8.016 8.016 0 0 0-4.339 10.474l6.545 15.8a8.02 8.02 0 0 0 7.41 4.951 8.016 8.016 0 0 0 7.404-11.086l-6.546-15.8zM325.582 403.037l-6.545-15.8a8.017 8.017 0 0 0-14.813 6.135l6.545 15.8a8.019 8.019 0 0 0 10.475 4.339 8.017 8.017 0 0 0 4.338-10.474zM124.764 192.963l-15.8-6.545a8.016 8.016 0 0 0-10.474 4.339 8.016 8.016 0 0 0 4.339 10.474l15.8 6.545a7.985 7.985 0 0 0 3.065.612 8.02 8.02 0 0 0 7.41-4.951 8.019 8.019 0 0 0-4.34-10.474zM77.362 173.329l-15.8-6.545c-4.092-1.694-8.78.248-10.474 4.339s.248 8.78 4.339 10.474l15.8 6.545a8.02 8.02 0 0 0 10.475-4.34 8.016 8.016 0 0 0-4.34-10.473zM456.574 330.402l-15.8-6.545a8.016 8.016 0 0 0-10.474 4.34 8.016 8.016 0 0 0 4.339 10.474l15.8 6.545a7.989 7.989 0 0 0 3.065.612 8.02 8.02 0 0 0 7.41-4.951 8.02 8.02 0 0 0-4.34-10.475zM387.236 319.037l15.8 6.545a7.985 7.985 0 0 0 3.065.612 8.02 8.02 0 0 0 7.41-4.951 8.016 8.016 0 0 0-4.339-10.474l-15.8-6.545a8.017 8.017 0 0 0-6.136 14.813zM308.563 129.102a7.985 7.985 0 0 0 3.065.612 8.02 8.02 0 0 0 7.41-4.951l6.545-15.8a8.016 8.016 0 0 0-4.339-10.474 8.015 8.015 0 0 0-10.474 4.339l-6.545 15.8a8.015 8.015 0 0 0 4.338 10.474zM328.196 81.701a8.019 8.019 0 0 0 10.475-4.339l6.545-15.8a8.016 8.016 0 1 0-14.813-6.135l-6.545 15.8a8.017 8.017 0 0 0 4.338 10.474zM183.804 430.299a8.016 8.016 0 0 0-10.474 4.339l-6.545 15.8a8.016 8.016 0 0 0 7.404 11.086 8.02 8.02 0 0 0 7.41-4.951l6.545-15.8a8.02 8.02 0 0 0-4.34-10.474zM203.437 382.898a8.015 8.015 0 0 0-10.474 4.339l-6.545 15.8a8.016 8.016 0 0 0 7.404 11.086 8.02 8.02 0 0 0 7.41-4.951l6.545-15.8a8.017 8.017 0 0 0-4.34-10.474z'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.7;
+}
+
+.solar-panels {
+    position: absolute;
+    bottom: 0;
+    height: 120px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 200' fill='none'%3E%3Cpath d='M50,160 L100,100 L150,160 L50,160 Z' fill='%23516e41' fill-opacity='0.8'/%3E%3Cpath d='M170,160 L220,100 L270,160 L170,160 Z' fill='%23516e41' fill-opacity='0.8'/%3E%3Cpath d='M290,160 L340,100 L390,160 L290,160 Z' fill='%23516e41' fill-opacity='0.8'/%3E%3Cpath d='M410,160 L460,100 L510,160 L410,160 Z' fill='%23516e41' fill-opacity='0.8'/%3E%3Cpath d='M530,160 L580,100 L630,160 L530,160 Z' fill='%23516e41' fill-opacity='0.8'/%3E%3C/svg%3E");
+    background-repeat: repeat-x;
+    background-size: auto 100%;
+}
+
+.solar-panels.left {
+    left: 0;
+    width: 35%;
+}
+
+.solar-panels.right {
+    right: 0;
+    width: 35%;
+    transform: scaleX(-1);
+}
+
+/* New Solar Panel Grid */
+.solar-panel-grid {
+    position: absolute;
+    top: 50%;
+    right: 40px;
+    width: 120px;
+    height: 120px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' fill='none'%3E%3Crect x='10' y='10' width='180' height='180' fill='%23436e94' fill-opacity='0.2' /%3E%3Cpath d='M10,10 L190,10 L190,190 L10,190 L10,10 Z' stroke='%23436e94' stroke-width='2'/%3E%3Cpath d='M10,73 L190,73' stroke='%23436e94' stroke-width='2'/%3E%3Cpath d='M10,136 L190,136' stroke='%23436e94' stroke-width='2'/%3E%3Cpath d='M73,10 L73,190' stroke='%23436e94' stroke-width='2'/%3E%3Cpath d='M136,10 L136,190' stroke='%23436e94' stroke-width='2'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+    transform: rotate(15deg);
+}
+
+/* Additional solar array pattern */
+.content::before {
+    content: '';
+    position: absolute;
+    bottom: 80px;
+    right: 180px;
+    width: 100px;
+    height: 60px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 60' fill='none'%3E%3Crect x='5' y='5' width='15' height='15' fill='%23436e94' fill-opacity='0.3' stroke='%23436e94' stroke-width='1'/%3E%3Crect x='25' y='5' width='15' height='15' fill='%23436e94' fill-opacity='0.3' stroke='%23436e94' stroke-width='1'/%3E%3Crect x='45' y='5' width='15' height='15' fill='%23436e94' fill-opacity='0.3' stroke='%23436e94' stroke-width='1'/%3E%3Crect x='65' y='5' width='15' height='15' fill='%23436e94' fill-opacity='0.3' stroke='%23436e94' stroke-width='1'/%3E%3Crect x='5' y='25' width='15' height='15' fill='%23436e94' fill-opacity='0.3' stroke='%23436e94' stroke-width='1'/%3E%3Crect x='25' y='25' width='15' height='15' fill='%23436e94' fill-opacity='0.3' stroke='%23436e94' stroke-width='1'/%3E%3Crect x='45' y='25' width='15' height='15' fill='%23436e94' fill-opacity='0.3' stroke='%23436e94' stroke-width='1'/%3E%3Crect x='65' y='25' width='15' height='15' fill='%23436e94' fill-opacity='0.3' stroke='%23436e94' stroke-width='1'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0.7;
+    z-index: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content {
+        padding: 30px 20px;
+    }
+    
+    .keyboard {
+        gap: 5px;
+    }
+    
+    .key {
+        width: 35px;
+        height: 35px;
+        font-size: 1.2rem;
+    }
+    
+    .message h1 {
+        font-size: 2.2rem;
+    }
+    
+    .subscribe-form {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .subscribe-form input {
+        width: 100%;
+    }
+    
+    .subscribe-form button {
+        width: 100%;
+        margin-left: 0;
+    }
+    
+    .sun-graphic {
+        width: 100px;
+        height: 100px;
+        top: 15px;
+        left: 15px;
+    }
+    
+    .solar-panels {
+        height: 80px;
+    }
+    
+    .solar-panel-grid {
+        width: 80px;
+        height: 80px;
+        right: 20px;
+    }
+    
+    .contact-info {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .message h1 {
+        font-size: 1.8rem;
+    }
+    
+    .keyboard {
+        gap: 4px;
+    }
+    
+    .key {
+        width: 28px;
+        height: 28px;
+        font-size: 1rem;
+        box-shadow: 0 3px 0 var(--key-shadow);
+    }
+    
+    .key.pressed {
+        transform: translateY(3px);
+    }
+    
+    .message p {
+        font-size: 0.9rem;
+    }
+    
+    .sun-graphic {
+        opacity: 0.4;
+    }
+    
+    .content::before {
+        display: none;
+    }
+}
+
+/* Message Styles */
+.message {
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+.message h1 {
+    font-family: 'Prata', serif;
+    font-size: 2.8rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.message p {
+    max-width: 550px;
+    margin: 20px auto;
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+/* Keyboard animation styles */
+.keyboard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin: 10px auto;
+}
+
+.key {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: var(--key-color);
+    color: var(--key-text);
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1.6rem;
+    position: relative;
+    box-shadow: 0 4px 0 var(--key-shadow);
+    transition: transform 0.1s, box-shadow 0.1s;
+    user-select: none;
+}
+
+.key.space {
+    width: 20px;
+}
+
+.key::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: var(--key-highlight);
+    border-radius: 8px 8px 0 0;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.key.pressed {
+    transform: translateY(4px);
+    box-shadow: 0 0 0 var(--key-shadow);
+}
+
+/* Subscribe Form */
+.subscribe-form {
+    display: flex;
+    max-width: 560px;
+    margin: 0 auto 30px;
+    position: relative;
+    z-index: 2;
+}
+
+.subscribe-form input {
+    flex: 1;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 30px;
+    background-color: var(--input-bg);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+.subscribe-form button {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 30px;
+    margin-left: -40px;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.subscribe-form button:hover {
+    background-color: #e8b665;
+}
+
+/* Contact Info */
+.contact-info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 10px 15px;
+    border-radius: 20px;
+}
+
+.contact-item i {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+.contact-item a, .contact-item span {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.contact-item a:hover {
+    text-decoration: underline;
+}
+
+/* Decorative Elements */
+.decoration {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.sun-graphic {
+    position: absolute;
+    top: 10px;
+    left: 30px;
+    width: 180px;
+    height: 180px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' style='enable-background:new 0 0 512 512' xml:space='preserve'%3E%3Ccircle style='fill:%23fff5b1' cx='256' cy='256' r='153.921'/%3E%3Ccircle style='fill:%23ffeb64' cx='256' cy='256' r='102.614'/%3E%3Cpath d='M256 145.37c-61.002 0-110.63 49.629-110.63 110.63S194.998 366.63 256 366.63 366.63 317.002 366.63 256 317.002 145.37 256 145.37zm0 205.227c-52.161 0-94.597-42.436-94.597-94.597s42.436-94.597 94.597-94.597 94.597 42.436 94.597 94.597-42.436 94.597-94.597 94.597zM67.34 256a8.017 8.017 0 0 0-8.017-8.017H8.017a8.017 8.017 0 0 0 0 16.034h51.307A8.017 8.017 0 0 0 67.34 256zM147.539 353.123l-60.465 60.465a8.016 8.016 0 0 0 0 11.337 7.988 7.988 0 0 0 5.668 2.348 7.988 7.988 0 0 0 5.668-2.348l60.465-60.465a8.016 8.016 0 0 0 0-11.337 8.015 8.015 0 0 0-11.336 0zM413.589 87.074l-60.465 60.465a8.016 8.016 0 0 0 0 11.337 7.988 7.988 0 0 0 5.668 2.348 7.988 7.988 0 0 0 5.668-2.348l60.465-60.465a8.016 8.016 0 0 0 0-11.337 8.013 8.013 0 0 0-11.336 0zM393.353 256a8.017 8.017 0 0 0 8.017 8.017h17.102a8.017 8.017 0 0 0 0-16.034H401.37a8.017 8.017 0 0 0-8.017 8.017zM118.647 256a8.017 8.017 0 0 0-8.017-8.017H93.528a8.017 8.017 0 0 0 0 16.034h17.102a8.017 8.017 0 0 0 8.017-8.017zM503.983 247.983h-51.307a8.017 8.017 0 0 0 0 16.034h51.307a8.017 8.017 0 0 0 0-16.034zM256 118.647a8.017 8.017 0 0 0 8.017-8.017V93.528a8.017 8.017 0 0 0-16.034 0v17.102a8.017 8.017 0 0 0 8.017 8.017zM256 67.34a8.017 8.017 0 0 0 8.017-8.017V8.017a8.017 8.017 0 0 0-16.034 0v51.307A8.017 8.017 0 0 0 256 67.34zM256 393.353a8.017 8.017 0 0 0-8.017 8.017v17.102a8.017 8.017 0 0 0 16.034 0V401.37a8.017 8.017 0 0 0-8.017-8.017zM256 444.66a8.017 8.017 0 0 0-8.017 8.017v51.307a8.017 8.017 0 0 0 16.034 0v-51.307A8.017 8.017 0 0 0 256 444.66zM147.539 158.877a7.988 7.988 0 0 0 5.668 2.348 7.988 7.988 0 0 0 5.668-2.348 8.016 8.016 0 0 0 0-11.337L98.411 87.074a8.014 8.014 0 0 0-11.337 0 8.016 8.016 0 0 0 0 11.337l60.465 60.466zM364.461 353.123a8.016 8.016 0 0 0-11.337 0 8.016 8.016 0 0 0 0 11.337l60.465 60.465c1.565 1.566 3.617 2.348 5.668 2.348s4.103-.782 5.668-2.348a8.016 8.016 0 0 0 0-11.337l-60.464-60.465zM105.898 326.194a8 8 0 0 0 3.065-.612l15.8-6.545a8.016 8.016 0 1 0-6.135-14.813l-15.8 6.545a8.016 8.016 0 0 0-4.339 10.474 8.017 8.017 0 0 0 7.409 4.951zM71.227 323.858l-15.8 6.545a8.016 8.016 0 1 0 6.136 14.813l15.8-6.545a8.016 8.016 0 1 0-6.136-14.813zM437.709 188.754a8.018 8.018 0 0 0 3.065-.611l15.8-6.545a8.017 8.017 0 0 0-6.135-14.813l-15.8 6.545a8.016 8.016 0 0 0-4.339 10.474 8.016 8.016 0 0 0 7.409 4.95zM403.037 186.418l-15.8 6.545a8.016 8.016 0 0 0-4.339 10.474 8.018 8.018 0 0 0 10.475 4.339l15.8-6.545a8.018 8.018 0 0 0-6.136-14.813zM186.418 108.963l6.545 15.8a8.02 8.02 0 0 0 7.41 4.951 8.016 8.016 0 0 0 7.404-11.086l-6.545-15.8a8.015 8.015 0 0 0-10.474-4.339 8.016 8.016 0 0 0-4.34 10.474zM173.329 77.362a8.019 8.019 0 0 0 10.475 4.339 8.016 8.016 0 0 0 4.339-10.474l-6.545-15.8a8.017 8.017 0 0 0-14.813 6.135l6.544 15.8zM338.671 434.638a8.016 8.016 0 0 0-10.474-4.339 8.016 8.016 0 0 0-4.339 10.474l6.545 15.8a8.02 8.02 0 0 0 7.41 4.951 8.016 8.016 0 0 0 7.404-11.086l-6.546-15.8zM325.582 403.037l-6.545-15.8a8.017 8.017 0 0 0-14.813 6.135l6.545 15.8a8.019 8.019 0 0 0 10.475 4.339 8.017 8.017 0 0 0 4.338-10.474zM124.764 192.963l-15.8-6.545a8.016 8.016 0 0 0-10.474 4.339 8.016 8.016 0 0 0 4.339 10.474l15.8 6.545a7.985 7.985 0 0 0 3.065.612 8.02 8.02 0 0 0 7.41-4.951 8.019 8.019 0 0 0-4.34-10.474zM77.362 173.329l-15.8-6.545c-4.092-1.694-8.78.248-10.474 4.339s.248 8.78 4.339 10.474l15.8 6.545a8.02 8.02 0 0 0 10.475-4.34 8.016 8.016 0 0 0-4.34-10.473zM456.574 330.402l-15.8-6.545a8.016 8.016 0 0 0-10.474 4.34 8.016 8.016 0 0 0 4.339 10.474l15.8 6.545a7.989 7.989 0 0 0 3.065.612 8.02 8.02 0 0 0 7.41-4.951 8.02 8.02 0 0 0-4.34-10.475zM387.236 319.037l15.8 6.545a7.985 7.985 0 0 0 3.065.612 8.02 8.02 0 0 0 7.41-4.951 8.016 8.016 0 0 0-4.339-10.474l-15.8-6.545a8.017 8.017 0 0 0-6.136 14.813zM308.563 129.102a7.985 7.985 0 0 0 3.065.612 8.02 8.02 0 0 0 7.41-4.951l6.545-15.8a8.016 8.016 0 0 0-4.339-10.474 8.015 8.015 0 0 0-10.474 4.339l-6.545 15.8a8.015 8.015 0 0 0 4.338 10.474zM328.196 81.701a8.019 8.019 0 0 0 10.475-4.339l6.545-15.8a8.016 8.016 0 1 0-14.813-6.135l-6.545 15.8a8.017 8.017 0 0 0 4.338 10.474zM183.804 430.299a8.016 8.016 0 0 0-10.474 4.339l-6.545 15.8a8.016 8.016 0 0 0 7.404 11.086 8.02 8.02 0 0 0 7.41-4.951l6.545-15.8a8.02 8.02 0 0 0-4.34-10.474zM203.437 382.898a8.015 8.015 0 0 0-10.474 4.339l-6.545 15.8a8.016 8.016 0 0 0 7.404 11.086 8.02 8.02 0 0 0 7.41-4.951l6.545-15.8a8.017 8.017 0 0 0-4.34-10.474z'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.7;
+}
+
+.solar-panels {
+    position: absolute;
+    bottom: 0;
+    height: 120px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 200' fill='none'%3E%3Cpath d='M50,160 L100,100 L150,160 L50,160 Z' fill='%23516e41' fill-opacity='0.8'/%3E%3Cpath d='M170,160 L220,100 L270,160 L170,160 Z' fill='%23516e41' fill-opacity='0.8'/%3E%3Cpath d='M290,160 L340,100 L390,160 L290,160 Z' fill='%23516e41' fill-opacity='0.8'/%3E%3Cpath d='M410,160 L460,100 L510,160 L410,160 Z' fill='%23516e41' fill-opacity='0.8'/%3E%3Cpath d='M530,160 L580,100 L630,160 L530,160 Z' fill='%23516e41' fill-opacity='0.8'/%3E%3C/svg%3E");
+    background-repeat: repeat-x;
+    background-size: auto 100%;
+}
+
+.solar-panels.left {
+    left: 0;
+    width: 35%;
+}
+
+.solar-panels.right {
+    right: 0;
+    width: 35%;
+    transform: scaleX(-1);
+}
+
+/* New Solar Panel Grid */
+.solar-panel-grid {
+    position: absolute;
+    top: 50%;
+    right: 40px;
+    width: 120px;
+    height: 120px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' fill='none'%3E%3Crect x='10' y='10' width='180' height='180' fill='%23436e94' fill-opacity='0.2' /%3E%3Cpath d='M10,10 L190,10 L190,190 L10,190 L10,10 Z' stroke='%23436e94' stroke-width='2'/%3E%3Cpath d='M10,73 L190,73' stroke='%23436e94' stroke-width='2'/%3E%3Cpath d='M10,136 L190,136' stroke='%23436e94' stroke-width='2'/%3E%3Cpath d='M73,10 L73,190' stroke='%23436e94' stroke-width='2'/%3E%3Cpath d='M136,10 L136,190' stroke='%23436e94' stroke-width='2'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+    transform: rotate(15deg);
+}
+
+/* Additional solar array pattern */
+.content::before {
+    content: '';
+    position: absolute;
+    bottom: 80px;
+    right: 180px;
+    width: 100px;
+    height: 60px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 60' fill='none'%3E%3Crect x='5' y='5' width='15' height/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Prata&family=Inter:wght@300;400;500&display=swap');
+
+/* Base Styles */
+:root {
+    --primary-color: #516e41; /* Forest green */
+    --accent-color: #f0c075; /* Warm gold */
+    --background-color: rgba(226, 232, 228, 0.85); /* Light sage with opacity */
+    --text-color: #4a5844; /* Dark olive */
+    --input-bg: #ffffff;
+    --button-bg: #f0c075;
+    --button-text: #4a5844;
+    --panel-color: #436e94; /* Solar panel blue */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('img/solar-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Container Styles */
+.container {
+    width: 100%;
+    max-width: 900px;
+    padding: 20px;
+}
+
+.content {
+    background: var(--background-color);
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+    min-height: 550px; /* Increased height to accommodate contact info */
+}
+
+/* Logo Styles */
+.logo {
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.logo img {
+    max-width: 180px;
+    height: auto;
+}
+
+/* Message Styles */
+.message {
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+.message h1 {
+    font-family: 'Prata', serif;
+    font-size: 2.8rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.message p {
+    max-width: 550px;
+    margin: 0 auto;
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+/* Subscribe Form */
+.subscribe-form {
+    display: flex;
+    max-width: 560px;
+    margin: 0 auto 30px;
+    position: relative;
+    z-index: 2;
+}
+
+.subscribe-form input {
+    flex: 1;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 30px;
+    background-color: var(--input-bg);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+.subscribe-form button {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 30px;
+    margin-left: -40px;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.subscribe-form button:hover {
+    background-color: #e8b665;
+}
+
+/* Contact Info */
+.contact-info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 10px 15px;
+    border-radius: 20px;
+}
+
+.contact-item i {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+.contact-item a, .contact-item span {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.contact-item a:hover {
+    text-decoration: underline;
+}
+
+/* Decorative Elements */
+.decoration {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.sun-graphic {
+    position: absolute;
+    top: 10px;
+    left: 30px;
+    width: 180px;
+    height: 180px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' style='enable-background:new 0 0 512 512' xml:space='preserve'%3E%3Ccircle style='fill:%23fff5b1' cx='256' cy='256' r='153.921'/%3E%3Ccircle style='fill:%23ffeb64' cx='256' cy='256' r='102.614'/%3E%3Cpath d='M256 145.37c-61.002 0-110.63 49.629-110.63 110.63S194.998 366.63 256 366.63 366.63 317.002 366.63 256 317.002 145.37 256 145.37zm0 205.227c-52.161 0-94.597-42.436-94.597-94.597s42.436-94.597 94.597-94.597 94.597 42.436 94.597 94.597-42.436 94.597-94.597 94.597zM67.34 256a8.017 8.017 0 0 0-8.017-8.017H8.017a8.017 8.017 0 0 0 0 16.034h51.307A8.017 8.017 0 0 0 67.34 256zM147.539 353.123l-60.465 60.465a8.016 8.016 0 0 0 0 11.337 7.988 7.988 0 0 0 5.668 2.348 7.988 7.988 0 0 0 5.668-2.348l60.465-60.465a8.016 8.016 0 0 0 0-11.337 8.015 8.015 0 0 0-11.336 0zM413.589 87.074l-60.465 60.465a8.016 8.016 0 0 0 0 11.337 7.988 7.988 0 0 0 5.668 2.348 7.988 7.988 0 0 0 5.668-2.348l60.465-60.465a8.016 8.016 0 0 0 0-11.337 8.013 8.013 0 0 0-11.336 0zM393.353 256a8.017 8.017 0 0 0 8.017 8.017h17.102a8.017 8.017 0 0 0 0-16.034H401.37a8.017 8.017 0 0 0-8.017 8.017zM118.647 256a8.017 8.017 0 0 0-8.017-8.017H93.528a8.017 8.017 0 0 0 0 16.034h17.102a8.017 8.017 0 0 0 8.017-8.017zM503.983 247.983h-51.307a8.017 8.017 0 0 0 0 16.034h51.307a8.017 8.017 0 0 0 0-16.034zM256 118.647a8.017 8.017 0 0 0 8.017-8.017V93.528a8.017 8.017 0 0 0-16.034 0v17.102a8.017 8.017 0 0 0 8.017 8.017zM256 67.34a8.017 8.017 0 0 0 8.017-8.017V8.017a8.017 8.017 0 0 0-16.034 0v51.307A8.017 8.017 0 0 0 256 67.34zM256 393.353a8.017 8.017 0 0 0-8.017 8.017v17.102a8.017 8.017 0 0 0 16.034 0V401.37a8.017 8.017 0 0 0-8.017-8.017zM256 444.66a8.017 8.017 0 0 0-8.017 8.017v51.307a8.017 8.017 0 0 0 16.034 0v-51.307A8.017 8.017 0 0 0 256 444.66zM147.539 158.877a7.988 7.988 0 0 0 5.668 2.348 7.988 7.988 0 0 0 5.668-2.348 8.016 8.016 0 0 0 0-11.337L98.411 87.074a8.014 8.014 0 0 0-11.337 0 8.016 8.016 0 0 0 0 11.337l60.465 60.466zM364.461 353.123a8.016 8.016 0 0 0-11.337 0 8.016 8.016 0 0 0 0 11.337l60.465 60.465c1.565 1.566 3.617 2.348 5.668 2.348s4.103-.782 5.668-2.348a8.016 8.016 0 0 0 0-11.337l-60.464-60.465zM105.898 326.194a8 8 0 0 0 3.065-.612l15.8-6.545a8.016 8.016 0 1 0-6.135-14.813l-15.8 6.545a8.016 8.016 0 0 0-4.339 10.474 8.017 8.017 0 0 0 7.409 4.951zM71.227 323.858l-15.8 6.545a8.016 8.016 0 1 0 6.136 14.813l15.8-6.545a8.016 8.016 0 1 0-6.136-14.813zM437.709 188.754a8.018 8.018 0 0 0 3.065-.611l15.8-6.545a8.017 8.017 0 0 0-6.135-14.813l-15.8 6.545a8.016 8.016 0 0 0-4.339 10.474 8.016 8.016 0 0 0 7.409 4.95zM403.037 186.418l-15.8 6.545a8.016 8.016 0 0 0-4.339 10.474 8.018 8.018 0 0 0 10.475 4.339l15.8-6.545a8.018 8.018 0 0 0-6.136-14.813zM186.418 108.963l6.545 15.8a8.02 8.02 0 0 0 7.41 4.951 8.016 8.016 0 0 0 7.404-11.086l-6.545-15.8a8.015 8.015 0 0 0-10.474-4.339 8.016 8.016 0 0 0-4.34 10.474zM173.329 77.362a8.019 8.019 0 0 0 10.475 4.339 8.016 8.016 0 0 0 4.339-10.474l-6.545-15.8a8.017 8.017 0 0 0-14.813 6.135l6.544 15.8zM338.671 434.638a8.016 8.016 0 0 0-10.474-4.339 8.016 8.016 0 0 0-4.339 10.474l6.545 15.8a8.02 8.02 0 0 0 7.41 4.951 8.016 8.016 0 0 0 7.404-11.086l-6.546-15.8zM325.582 403.037l-6.545-15.8a8.017 8.017 0 0 0-14.813 6.135l6.545 15.8a8.019 8.019 0 0 0 10.475 4.339 8.017 8.017 0 0 0 4.338-10.474zM124.764 192.963l-15.8-6.545a8.016 8.016 0 0 0-10.474 4.339 8.016 8.016 0 0 0 4.339 10.474l15.8 6.545a7.985 7.985 0 0 0 3.065.612 8.02 8.02 0 0 0 7.41-4.951 8.019 8.019 0 0 0-4.34-10.474zM77.362 173.329l-15.8-6.545c-4.092-1.694-8.78.248-10.474 4.339s.248 8.78 4.339 10.474l15.8 6.545a8.02 8.02 0 0 0 10.475-4.34 8.016 8.016 0 0 0-4.34-10.473zM456.574 330.402l-15.8-6.545a8.016 8.016 0 0 0-10.474 4.34 8.016 8.016 0 0 0 4.339 10.474l15.8 6.545a7.989 7.989 0 0 0 3.065.612 8.02 8.02 0 0 0 7.41-4.951 8.02 8.02 0 0 0-4.34-10.475zM387.236 319.037l15.8 6.545a7.985 7.985 0 0 0 3.065.612 8.02 8.02 0 0 0 7.41-4.951 8.016 8.016 0 0 0-4.339-10.474l-15.8-6.545a8.017 8.017 0 0 0-6.136 14.813zM308.563 129.102a7.985 7.985 0 0 0 3.065.612 8.02 8.02 0 0 0 7.41-4.951l6.545-15.8a8.016 8.016 0 0 0-4.339-10.474 8.015 8.015 0 0 0-10.474 4.339l-6.545 15.8a8.015 8.015 0 0 0 4.338 10.474zM328.196 81.701a8.019 8.019 0 0 0 10.475-4.339l6.545-15.8a8.016 8.016 0 1 0-14.813-6.135l-6.545 15.8a8.017 8.017 0 0 0 4.338 10.474zM183.804 430.299a8.016 8.016 0 0 0-10.474 4.339l-6.545 15.8a8.016 8.016 0 0 0 7.404 11.086 8.02 8.02 0 0 0 7.41-4.951l6.545-15.8a8.02 8.02 0 0 0-4.34-10.474zM203.437 382.898a8.015 8.015 0 0 0-10.474 4.339l-6.545 15.8a8.016 8.016 0 0 0 7.404 11.086 8.02 8.02 0 0 0 7.41-4.951l6.545-15.8a8.017 8.017 0 0 0-4.34-10.474z'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.7;
+}
+
+.solar-panels {
+    position: absolute;
+    bottom: 0;
+    height: 120px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 200' fill='none'%3E%3Cpath d='M50,160 L100,100 L150,160 L50,160 Z' fill='%23516e41' fill-opacity='0.8'/%3E%3Cpath d='M170,160 L220,100 L270,160 L170,160 Z' fill='%23516e41' fill-opacity='0.8'/%3E%3Cpath d='M290,160 L340,100 L390,160 L290,160 Z' fill='%23516e41' fill-opacity='0.8'/%3E%3Cpath d='M410,160 L460,100 L510,160 L410,160 Z' fill='%23516e41' fill-opacity='0.8'/%3E%3Cpath d='M530,160 L580,100 L630,160 L530,160 Z' fill='%23516e41' fill-opacity='0.8'/%3E%3C/svg%3E");
+    background-repeat: repeat-x;
+    background-size: auto 100%;
+}
+
+.solar-panels.left {
+    left: 0;
+    width: 35%;
+}
+
+.solar-panels.right {
+    right: 0;
+    width: 35%;
+    transform: scaleX(-1);
+}
+
+/* New Solar Panel Grid */
+.solar-panel-grid {
+    position: absolute;
+    top: 50%;
+    right: 40px;
+    width: 120px;
+    height: 120px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' fill='none'%3E%3Crect x='10' y='10' width='180' height='180' fill='%23436e94' fill-opacity='0.2' /%3E%3Cpath d='M10,10 L190,10 L190,190 L10,190 L10,10 Z' stroke='%23436e94' stroke-width='2'/%3E%3Cpath d='M10,73 L190,73' stroke='%23436e94' stroke-width='2'/%3E%3Cpath d='M10,136 L190,136' stroke='%23436e94' stroke-width='2'/%3E%3Cpath d='M73,10 L73,190' stroke='%23436e94' stroke-width='2'/%3E%3Cpath d='M136,10 L136,190' stroke='%23436e94' stroke-width='2'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+    transform: rotate(15deg);
+}
+
+/* Additional solar array pattern */
+.content::before {
+    content: '';
+    position: absolute;
+    bottom: 80px;
+    right: 180px;
+    width: 100px;
+    height: 60px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 60' fill='none'%3E%3Crect x='5' y='5' width='15' height='15' fill='%23436e94' fill-opacity='0.3' stroke='%23436e94' stroke-width='1'/%3E%3Crect x='25' y='5' width='15' height='15' fill='%23436e94' fill-opacity='0.3' stroke='%23436e94' stroke-width='1'/%3E%3Crect x='45' y='5' width='15' height='15' fill='%23436e94' fill-opacity='0.3' stroke='%23436e94' stroke-width='1'/%3E%3Crect x='65' y='5' width='15' height='15' fill='%23436e94' fill-opacity='0.3' stroke='%23436e94' stroke-width='1'/%3E%3Crect x='5' y='25' width='15' height='15' fill='%23436e94' fill-opacity='0.3' stroke='%23436e94' stroke-width='1'/%3E%3Crect x='25' y='25' width='15' height='15' fill='%23436e94' fill-opacity='0.3' stroke='%23436e94' stroke-width='1'/%3E%3Crect x='45' y='25' width='15' height='15' fill='%23436e94' fill-opacity='0.3' stroke='%23436e94' stroke-width='1'/%3E%3Crect x='65' y='25' width='15' height='15' fill='%23436e94' fill-opacity='0.3' stroke='%23436e94' stroke-width='1'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0.7;
+    z-index: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content {
+        padding: 30px 20px;
+    }
+    
+    .message h1 {
+        font-size: 2.2rem;
+    }
+    
+    .subscribe-form {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .subscribe-form input {
+        width: 100%;
+    }
+    
+    .subscribe-form button {
+        width: 100%;
+        margin-left: 0;
+    }
+    
+    .sun-graphic {
+        width: 100px;
+        height: 100px;
+        top: 15px;
+        left: 15px;
+    }
+    
+    .solar-panels {
+        height: 80px;
+    }
+    
+    .solar-panel-grid {
+        width: 80px;
+        height: 80px;
+        right: 20px;
+    }
+    
+    .contact-info {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .message h1 {
+        font-size: 1.8rem;
+    }
+    
+    .message p {
+        font-size: 0.9rem;
+    }
+    
+    .sun-graphic {
+        opacity: 0.4;
+    }
+    
+    .content::before {
+        display: none;
+    }
+}
+
+/* Message Styles */
+.message {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.message h1 {
+    font-family: 'Prata', serif;
+    font-size: 2.8rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.message p {
+    max-width: 550px;
+    margin: 0 auto;
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+/* Subscribe Form */
+.subscribe-form {
+    display: flex;
+    max-width: 560px;
+    margin: 0 auto 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.subscribe-form input {
+    flex: 1;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 30px;
+    background-color: var(--input-bg);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+.subscribe-form button {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 30px;
+    margin-left: -40px;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.subscribe-form button:hover {
+    background-color: #e8b665;
+}
+
+/* Decorative Elements */
+.decoration {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.sun-graphic {
+    position: absolute;
+    top: 10px;
+    left: 30px;
+    width: 180px;
+    height: 180px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' style='enable-background:new 0 0 512 512' xml:space='preserve'%3E%3Ccircle style='fill:%23fff5b1' cx='256' cy='256' r='153.921'/%3E%3Ccircle style='fill:%23ffeb64' cx='256' cy='256' r='102.614'/%3E%3Cpath d='M256 145.37c-61.002 0-110.63 49.629-110.63 110.63S194.998 366.63 256 366.63 366.63 317.002 366.63 256 317.002 145.37 256 145.37zm0 205.227c-52.161 0-94.597-42.436-94.597-94.597s42.436-94.597 94.597-94.597 94.597 42.436 94.597 94.597-42.436 94.597-94.597 94.597zM67.34 256a8.017 8.017 0 0 0-8.017-8.017H8.017a8.017 8.017 0 0 0 0 16.034h51.307A8.017 8.017 0 0 0 67.34 256zM147.539 353.123l-60.465 60.465a8.016 8.016 0 0 0 0 11.337 7.988 7.988 0 0 0 5.668 2.348 7.988 7.988 0 0 0 5.668-2.348l60.465-60.465a8.016 8.016 0 0 0 0-11.337 8.015 8.015 0 0 0-11.336 0zM413.589 87.074l-60.465 60.465a8.016 8.016 0 0 0 0 11.337 7.988 7.988 0 0 0 5.668 2.348 7.988 7.988 0 0 0 5.668-2.348l60.465-60.465a8.016 8.016 0 0 0 0-11.337 8.013 8.013 0 0 0-11.336 0zM393.353 256a8.017 8.017 0 0 0 8.017 8.017h17.102a8.017 8.017 0 0 0 0-16.034H401.37a8.017 8.017 0 0 0-8.017 8.017zM118.647 256a8.017 8.017 0 0 0-8.017-8.017H93.528a8.017 8.017 0 0 0 0 16.034h17.102a8.017 8.017 0 0 0 8.017-8.017zM503.983 247.983h-51.307a8.017 8.017 0 0 0 0 16.034h51.307a8.017 8.017 0 0 0 0-16.034zM256 118.647a8.017 8.017 0 0 0 8.017-8.017V93.528a8.017 8.017 0 0 0-16.034 0v17.102a8.017 8.017 0 0 0 8.017 8.017zM256 67.34a8.017 8.017 0 0 0 8.017-8.017V8.017a8.017 8.017 0 0 0-16.034 0v51.307A8.017 8.017 0 0 0 256 67.34zM256 393.353a8.017 8.017 0 0 0-8.017 8.017v17.102a8.017 8.017 0 0 0 16.034 0V401.37a8.017 8.017 0 0 0-8.017-8.017zM256 444.66a8.017 8.017 0 0 0-8.017 8.017v51.307a8.017 8.017 0 0 0 16.034 0v-51.307A8.017 8.017 0 0 0 256 444.66zM147.539 158.877a7.988 7.988 0 0 0 5.668 2.348 7.988 7.988 0 0 0 5.668-2.348 8.016 8.016 0 0 0 0-11.337L98.411 87.074a8.014 8.014 0 0 0-11.337 0 8.016 8.016 0 0 0 0 11.337l60.465 60.466zM364.461 353.123a8.016 8.016 0 0 0-11.337 0 8.016 8.016 0 0 0 0 11.337l60.465 60.465c1.565 1.566 3.617 2.348 5.668 2.348s4.103-.782 5.668-2.348a8.016 8.016 0 0 0 0-11.337l-60.464-60.465zM105.898 326.194a8 8 0 0 0 3.065-.612l15.8-6.545a8.016 8.016 0 1 0-6.135-14.813l-15.8 6.545a8.016 8.016 0 0 0-4.339 10.474 8.017 8.017 0 0 0 7.409 4.951zM71.227 323.858l-15.8 6.545a8.016 8.016 0 1 0 6.136 14.813l15.8-6.545a8.016 8.016 0 1 0-6.136-14.813zM437.709 188.754a8.018 8.018 0 0 0 3.065-.611l15.8-6.545a8.017 8.017 0 0 0-6.135-14.813l-15.8 6.545a8.016 8.016 0 0 0-4.339 10.474 8.016 8.016 0 0 0 7.409 4.95zM403.037 186.418l-15.8 6.545a8.016 8.016 0 0 0-4.339 10.474 8.018 8.018 0 0 0 10.475 4.339l15.8-6.545a8.018 8.018 0 0 0-6.136-14.813zM186.418 108.963l6.545 15.8a8.02 8.02 0 0 0 7.41 4.951 8.016 8.016 0 0 0 7.404-11.086l-6.545-15.8a8.015 8.015 0 0 0-10.474-4.339 8.016 8.016 0 0 0-4.34 10.474zM173.329 77.362a8.019 8.019 0 0 0 10.475 4.339 8.016 8.016 0 0 0 4.339-10.474l-6.545-15.8a8.017 8.017 0 0 0-14.813 6.135l6.544 15.8zM338.671 434.638a8.016 8.016 0 0 0-10.474-4.339 8.016 8.016 0 0 0-4.339 10.474l6.545 15.8a8.02 8.02 0 0 0 7.41 4.951 8.016 8.016 0 0 0 7.404-11.086l-6.546-15.8zM325.582 403.037l-6.545-15.8a8.017 8.017 0 0 0-14.813 6.135l6.545 15.8a8.019 8.019 0 0 0 10.475 4.339 8.017 8.017 0 0 0 4.338-10.474zM124.764 192.963l-15.8-6.545a8.016 8.016 0 0 0-10.474 4.339 8.016 8.016 0 0 0 4.339 10.474l15.8 6.545a7.985 7.985 0 0 0 3.065.612 8.02 8.02 0 0 0 7.41-4.951 8.019 8.019 0 0 0-4.34-10.474zM77.362 173.329l-15.8-6.545c-4.092-1.694-8.78.248-10.474 4.339s.248 8.78 4.339 10.474l15.8 6.545a8.02 8.02 0 0 0 10.475-4.34 8.016 8.016 0 0 0-4.34-10.473zM456.574 330.402l-15.8-6.545a8.016 8.016 0 0 0-10.474 4.34 8.016 8.016 0 0 0 4.339 10.474l15.8 6.545a7.989 7.989 0 0 0 3.065.612 8.02 8.02 0 0 0 7.41-4.951 8.02 8.02 0 0 0-4.34-10.475zM387.236 319.037l15.8 6.545a7.985 7.985 0 0 0 3.065.612 8.02 8.02 0 0 0 7.41-4.951 8.016 8.016 0 0 0-4.339-10.474l-15.8-6.545a8.017 8.017 0 0 0-6.136 14.813zM308.563 129.102a7.985 7.985 0 0 0 3.065.612 8.02 8.02 0 0 0 7.41-4.951l6.545-15.8a8.016 8.016 0 0 0-4.339-10.474 8.015 8.015 0 0 0-10.474 4.339l-6.545 15.8a8.015 8.015 0 0 0 4.338 10.474zM328.196 81.701a8.019 8.019 0 0 0 10.475-4.339l6.545-15.8a8.016 8.016 0 1 0-14.813-6.135l-6.545 15.8a8.017 8.017 0 0 0 4.338 10.474zM183.804 430.299a8.016 8.016 0 0 0-10.474 4.339l-6.545 15.8a8.016 8.016 0 0 0 7.404 11.086 8.02 8.02 0 0 0 7.41-4.951l6.545-15.8a8.02 8.02 0 0 0-4.34-10.474zM203.437 382.898a8.015 8.015 0 0 0-10.474 4.339l-6.545 15.8a8.016 8.016 0 0 0 7.404 11.086 8.02 8.02 0 0 0 7.41-4.951l6.545-15.8a8.017 8.017 0 0 0-4.34-10.474z'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.7;
+}
+
+.solar-panels {
+    position: absolute;
+    bottom: 0;
+    height: 120px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 200' fill='none'%3E%3Cpath d='M50,160 L100,100 L150,160 L50,160 Z' fill='%23516e41' fill-opacity='0.8'/%3E%3Cpath d='M170,160 L220,100 L270,160 L170,160 Z' fill='%23516e41' fill-opacity='0.8'/%3E%3Cpath d='M290,160 L340,100 L390,160 L290,160 Z' fill='%23516e41' fill-opacity='0.8'/%3E%3Cpath d='M410,160 L460,100 L510,160 L410,160 Z' fill='%23516e41' fill-opacity='0.8'/%3E%3Cpath d='M530,160 L580,100 L630,160 L530,160 Z' fill='%23516e41' fill-opacity='0.8'/%3E%3C/svg%3E");
+    background-repeat: repeat-x;
+    background-size: auto 100%;
+}
+
+.solar-panels.left {
+    left: 0;
+    width: 35%;
+}
+
+.solar-panels.right {
+    right: 0;
+    width: 35%;
+    transform: scaleX(-1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content {
+        padding: 30px 20px;
+    }
+    
+    .message h1 {
+        font-size: 2.2rem;
+    }
+    
+    .subscribe-form {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .subscribe-form input {
+        width: 100%;
+    }
+    
+    .subscribe-form button {
+        width: 100%;
+        margin-left: 0;
+    }
+    
+    .sun-graphic {
+        width: 100px;
+        height: 100px;
+        top: 15px;
+        left: 15px;
+    }
+    
+    .solar-panels {
+        height: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .message h1 {
+        font-size: 1.8rem;
+    }
+    
+    .message p {
+        font-size: 0.9rem;
+    }
+    
+    .sun-graphic {
+        opacity: 0.4;
+    }
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Environ Energy Tech - Coming Soon</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="logo-container">
+                <img src="img/Logo3.png" alt="Environ Energy Tech Logo" class="logo">
+            </div>
+            
+            <div class="content">
+                <div class="company-name">Environ Energy Tech</div>
+                <h1 class="headline">
+                    <span class="animated-text">Coming Soon</span>
+                </h1>
+                
+                <div class="tagline">
+                    <p>Our website is charging up with solar power</p>
+                </div>
+                
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress"></div>
+                    </div>
+                    <p class="progress-text">Site completion: 75%</p>
+                </div>
+                
+                <form id="subscribe-form" class="subscribe-form">
+                    <div class="input-group">
+                        <input type="email" name="email" placeholder="Enter your email for updates" required>
+                        <button type="submit">Notify Me</button>
+                    </div>
+                </form>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>32-4-2 , Labbipet,Vijayawada <br>
+                            Andhra Pradesh 520020 INDIA</span>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <a href="tel:+1234567890">+91 97049 76969</a>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:info@environenergytech.com">info@environenergytech.com</a>
+                    </div>
+                </div>
+                
+                <div class="social-links">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+            <div class="solar-animation">
+                <div class="sun"></div>
+                <div class="panel panel-1"></div>
+                <div class="panel panel-2"></div>
+                <div class="panel panel-3"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Animation for text
+        document.addEventListener('DOMContentLoaded', function() {
+            // Progress bar animation
+            const progressBar = document.querySelector('.progress');
+            setTimeout(() => {
+                progressBar.style.width = '75%';
+            }, 300);
+            
+            // Form submission handler
+            document.getElementById('subscribe-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const email = this.querySelector('input[name="email"]').value;
+                
+                // Alert for demo purposes
+                alert('Thank you for subscribing! We will notify you when we launch.');
+                
+                // This would be your AJAX call in a real implementation
+                console.log('New subscriber: ' + email);
+                
+                this.reset();
+            });
+        });
+    </script>
+</body>
+</html>
